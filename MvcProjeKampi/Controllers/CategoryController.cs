@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Concrete;
 using BusinessLayer.ValidationRules;
+using DataAccessLayer.Abstract;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using FluentValidation.Results;
@@ -15,6 +16,7 @@ namespace MvcProjeKampi.Controllers
     {
 
         CategoryManager cm = new CategoryManager(new EfCategoryDal());
+        HeadingManager hm = new HeadingManager(new EfHeadingDal());
 
         public ActionResult Index()
         {
@@ -54,5 +56,7 @@ namespace MvcProjeKampi.Controllers
 
             return View();
         }
+
+
     }
 }

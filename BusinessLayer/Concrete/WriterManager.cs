@@ -24,6 +24,11 @@ namespace BusinessLayer.Concrete
             return _writerDal.Get(x => x.WriterID == id);
         }
 
+        public List<Writer> GetWritersWithLetterA()
+        {
+            return _writerDal.List().Where(w => w.WriterName.Contains("A")).ToList();
+        }
+
         public List<Writer> GetList()
         {
             return _writerDal.List();

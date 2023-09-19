@@ -18,6 +18,11 @@ namespace BusinessLayer.Concrete
             return _headingDal.Get(x=>x.HeadingID == id);
         }
 
+        public List<Heading> GetByCategoryID(int id)
+        {
+            return _headingDal.List(x=>x.CategoryID == id);
+        }
+
         public HeadingManager(IHeadingDal headinDal)
         {
             _headingDal = headinDal;
@@ -42,5 +47,6 @@ namespace BusinessLayer.Concrete
         {
             _headingDal.Update(heading);
         }
+               
     }
 }

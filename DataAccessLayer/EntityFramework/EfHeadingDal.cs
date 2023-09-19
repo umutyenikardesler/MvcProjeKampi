@@ -11,6 +11,6 @@ namespace DataAccessLayer.EntityFramework
 {
     public class EfHeadingDal:GenericRepository<Heading>, IHeadingDal
     {
-
+        
     }
 }

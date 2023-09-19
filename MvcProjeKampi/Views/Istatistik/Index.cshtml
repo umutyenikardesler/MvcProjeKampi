@@ -1,0 +1,135 @@
+﻿
+@model EntityLayer.Concrete.Category
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>İstatistik Sayfası</h2>
+<br />
+
+<section class="content">
+
+    <div class="row">
+
+
+        <div class="col-md-2 col-sm-6 col-12">
+            <div class="info-box bg-info">
+                @*<span class="info-box-icon"><i class="far fa-bookmark"></i></span>*@
+
+                <div class="info-box-content">
+                    <span class="info-box-text">Toplam Kategori Sayısı</span>
+                    <h1><span class="info-box-number"> @ViewBag.CategoryCount </span></h1>
+
+                    @*<div class="progress">
+                            <div class="progress-bar" style="width: 70%"></div>
+                        </div>
+                        <span class="progress-description">
+                            70% Increase in 30 Days
+                        </span>*@
+                </div>
+                <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+        </div>
+
+        <div class="col-md-2 col-sm-6 col-12">
+            <div class="info-box bg-success">
+                @*<span class="info-box-icon"><i class="far fa-thumbs-up"></i></span>*@
+
+                <div class="info-box-content">
+                    <span class="info-box-text">''yazılım'a ait başlık sayısı</span>
+                    <h1><span class="info-box-number"> @ViewBag.YazilimBaslikCount </span></h1>
+
+                    @*<div class="progress">
+                            <div class="progress-bar" style="width: 70%"></div>
+                        </div>
+                        <span class="progress-description">
+                            70% Increase in 30 Days
+                        </span>*@
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-md-2 col-sm-6 col-12">
+            <div class="info-box bg-warning">
+                @*<span class="info-box-icon"><i class="far fa-thumbs-up"></i></span>*@
+
+                <div class="info-box-content">
+                    <span class="info-box-text">'a' harfi geçen yazar sayısı</span>
+                    <h1><span class="info-box-number"> @ViewBag.YazarSayisiAHarfiGecen </span></h1>
+
+                    @*<div class="progress">
+                            <div class="progress-bar" style="width: 70%"></div>
+                        </div>
+                        <span class="progress-description">
+                            70% Increase in 30 Days
+                        </span>*@
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-md-2 col-sm-6 col-12">
+            <div class="info-box bg-danger">
+                @*<span class="info-box-icon"><i class="far fa-thumbs-up"></i></span>*@
+
+                <div class="info-box-content">
+                    <span class="info-box-text">En fazla başlığa sahip kategori adı</span>
+                    <h1><span class="info-box-number"> @ViewBag.CategoryWithMostHeadings </span></h1>
+
+                    @*<div class="progress">
+                            <div class="progress-bar" style="width: 70%"></div>
+                        </div>
+                        <span class="progress-description">
+                            70% Increase in 30 Days
+                        </span>*@
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-md-2 col-sm-6 col-12">
+            <div class="info-box bg-gradient-gray">
+                @*<span class="info-box-icon"><i class="far fa-thumbs-up"></i></span>*@
+
+                <div class="info-box-content">
+                    <div>
+                        <span class="info-box-text text-wrap">kategoriler arasındaki sayısal fark</span>
+                    </div>
+                    <h1><span class="info-box-number"> @Math.Abs(ViewBag.TrueCategoryCount - ViewBag.FalseCategoryCount)</span></h1>
+
+                    @*<div class="progress">
+                            <div class="progress-bar" style="width: 70%"></div>
+                        </div>
+                        <span class="progress-description">
+                            70% Increase in 30 Days
+                        </span>*@
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-md-2 col-sm-6 col-12">
+            <div class="info-box bg-black">
+                @*<span class="info-box-icon"><i class="far fa-thumbs-up"></i></span>*@
+
+                <div class="info-box-content">
+                    <span class="info-box-text">40.Video Completed </span>
+                    <h1><span class="info-box-number">Bitti !</span></h1>
+
+                    @*<div class="progress">
+                            <div class="progress-bar" style="width: 70%"></div>
+                        </div>
+                        <span class="progress-description">
+                            70% Increase in 30 Days
+                        </span>*@
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>

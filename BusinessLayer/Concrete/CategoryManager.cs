@@ -1,6 +1,7 @@
 ﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
 using DataAccessLayer.Concrete.Repositories;
+using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -44,16 +45,14 @@ namespace BusinessLayer.Concrete
             return _categoryDal.List();
         }
 
-        //public void CategoryAddBL(Category p)
-        //{
-        //    if (p.CategoryName=="" || p.CategoryStatus == false || p.CategoryName.Length <= 2)
-        //    {
+        public Dictionary<bool, int> GetCategoryStatusCounts()
+        {
+            var categories = _categoryDal.List();
+            var counts = categories.GroupBy(c => c.CategoryStatus).ToDictionary(g => g.Key, g => g.Count());
+            return counts;
+        }
 
-        //    }
-        //    else
-        //    {
-        //        _categoryDal.Insert(p);
-        //    }
-        //}
+       
+
     }
 }
