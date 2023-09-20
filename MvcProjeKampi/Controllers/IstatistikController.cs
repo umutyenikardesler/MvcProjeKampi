@@ -86,10 +86,8 @@ namespace MvcProjeKampi.Controllers
             ViewBag.YazarSayisiAHarfiGecen = yazarSayisiAHarfiGecen;
 
 
-
             //En fazla başlığa sahip kategori adı
             CategoryWithMostHeadings();
-
 
 
             //Kategori tablosunda durumu true olan kategoriler ile false olan kategoriler arasındaki sayısal fark

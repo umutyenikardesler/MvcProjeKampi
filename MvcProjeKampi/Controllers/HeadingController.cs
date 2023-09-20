@@ -50,15 +50,11 @@ namespace MvcProjeKampi.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult ContentByHeading()
+        {
 
-        //public ActionResult MostCategoryName()
-        //{
-        //    CategoryWithMostHeadings(); // Yeni eylemi çağır
-
-        //    return View();
-        //}
-
-        
+            return View();
+        }  
 
     }
 }
