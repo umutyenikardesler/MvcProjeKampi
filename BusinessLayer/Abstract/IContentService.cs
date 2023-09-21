@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 namespace BusinessLayer.Abstract
 {
     public interface IContentService
-    {
+    {   
         List<Content> GetList();
-        List<Content> GetListByID(int id);
+        List<Content> GetListByHeadingID(int id);
         void ContentAdd(Content category);
 
         Content GetByID(int id);

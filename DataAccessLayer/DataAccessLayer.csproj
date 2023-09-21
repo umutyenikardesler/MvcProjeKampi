@@ -87,6 +87,14 @@
     <Compile Include="Migrations\202309201223022_mig_writer_status.designer.cs">
       <DependentUpon>202309201223022_mig_writer_status.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202309210831462_mig_contentstatusadd.cs" />
+    <Compile Include="Migrations\202309210831462_mig_contentstatusadd.designer.cs">
+      <DependentUpon>202309210831462_mig_contentstatusadd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202309210835240_mig_headingtatusadd.cs" />
+    <Compile Include="Migrations\202309210835240_mig_headingtatusadd.designer.cs">
+      <DependentUpon>202309210835240_mig_headingtatusadd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -115,6 +123,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202309201223022_mig_writer_status.resx">
       <DependentUpon>202309201223022_mig_writer_status.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309210831462_mig_contentstatusadd.resx">
+      <DependentUpon>202309210831462_mig_contentstatusadd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309210835240_mig_headingtatusadd.resx">
+      <DependentUpon>202309210835240_mig_headingtatusadd.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -28,7 +28,7 @@ namespace BusinessLayer.Concrete
             throw new NotImplementedException();
         }
 
-        public void ContentUpdate(Content content)
+        public void ContentUpdate(Content content)  
         {
             throw new NotImplementedException();
         }
@@ -43,7 +43,7 @@ namespace BusinessLayer.Concrete
             throw new NotImplementedException();
         }
 
-        public List<Content> GetListByID(int id)
+        public List<Content> GetListByHeadingID(int id)
         {
             return _contentDal.List(x=>x.HeadingID ==id);
         }

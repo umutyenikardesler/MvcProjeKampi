@@ -7,6 +7,7 @@
 }
 
 @{ string color = "";}
+@{ string statusColor = "";}
 
 @*<h2>Index</h2>
 
@@ -50,16 +51,19 @@
                         <th style="width: 1%">
                             #
                         </th>
-                        <th style="width: 25%">
+                        <th style="width: 20%">
                             Başlık Adı
                         </th>
                         <th style="width: 19%">
                             Oluşturan Yazar
                         </th>
+                        <th style="width: 20%">
+                            Durum
+                        </th>
                         <th style="width: 20%" class="text-center">
                             Kategori
                         </th>
-                        <th style="width: 35%" class="text-right">
+                        <th style="width: 20%" class="text-right">
                             Düzenleme İşlemleri
                         </th>
                     </tr>
@@ -115,6 +119,12 @@
                                     </li>
                                 </ul>
                             </td>
+                            <td class="">
+
+                                <span style="color: @(item.HeadingStatus ? "green" : "red");">@((item.HeadingStatus ? "Aktif" : "Pasif"))</span>
+
+
+                            </td>
                             <td class="project-state">
                                 <span class="@color">@item.Category.CategoryName</span>
                             </td>
@@ -124,16 +134,25 @@
                                     </i>
                                     Yazılar
                                 </a>
-                                <a class="btn btn-info btn-sm" href="#">
+                                <a class="btn btn-info btn-sm" href="/Heading/EditHeading/@item.HeadingID">
                                     <i class="fas fa-pencil-alt">
                                     </i>
                                     Düzenle
                                 </a>
-                                <a class="btn btn-danger btn-sm" href="#">
-                                    <i class="fas fa-trash">
-                                    </i>
-                                    Sil
-                                </a>
+
+                                @if (item.HeadingStatus)
+                                {
+                                    <a class="btn btn-danger btn-sm" href="/Heading/DeleteHeading/@item.HeadingID">
+                                        <i class="fas fa-trash"> Pasif Yap</i>
+                                    </a>
+                                }
+                                else
+                                {
+                                    <a class="btn btn-success btn-sm" href="/Heading/DeleteHeading/@item.HeadingID">
+                                        <i class="fas fa-trash"> Aktif Yap</i>
+                                    </a>
+                                }
+
                             </td>
                         </tr>
                     }
@@ -145,4 +164,4 @@
     <!-- /.card -->
     <a href="/Heading/AddHeading/" class="btn btn-primary">Yeni Başlık Girişi</a>
 </section>
-    <!-- /.content -->
+<!-- /.content -->
