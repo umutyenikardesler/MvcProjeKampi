@@ -17,6 +17,7 @@ namespace EntityLayer.Concrete
         public string UserMail { get; set; }
         [StringLength(50)]
         public string Subject { get; set; }
+        [StringLength(100)]
         public string Message { get; set; } 
     }
 }

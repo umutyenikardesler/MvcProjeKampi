@@ -62,6 +62,7 @@
     <Compile Include="Concrete\Repositories\CategoryRepository.cs" />
     <Compile Include="Concrete\Repositories\GenericRepository.cs" />
     <Compile Include="Concrete\Repositories\WriterRepository.cs" />
+    <Compile Include="EntityFramework\EfAboutDal.cs" />
     <Compile Include="EntityFramework\EfCantactDal.cs" />
     <Compile Include="EntityFramework\EfCategoryDal.cs" />
     <Compile Include="EntityFramework\EfContentDal.cs" />
@@ -94,6 +95,10 @@
     <Compile Include="Migrations\202309210835240_mig_headingtatusadd.cs" />
     <Compile Include="Migrations\202309210835240_mig_headingtatusadd.designer.cs">
       <DependentUpon>202309210835240_mig_headingtatusadd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202309221410210_mig_contactMessageLength.cs" />
+    <Compile Include="Migrations\202309221410210_mig_contactMessageLength.designer.cs">
+      <DependentUpon>202309221410210_mig_contactMessageLength.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -129,6 +134,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202309210835240_mig_headingtatusadd.resx">
       <DependentUpon>202309210835240_mig_headingtatusadd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309221410210_mig_contactMessageLength.resx">
+      <DependentUpon>202309221410210_mig_contactMessageLength.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
