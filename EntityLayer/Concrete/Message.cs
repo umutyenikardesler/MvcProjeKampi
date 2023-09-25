@@ -4,22 +4,26 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Mvc;
 
 namespace EntityLayer.Concrete
 {
-    public class Contact
+    public class Message
     {
         [Key]
-        public int ContactID { get; set; }
+        public int MessageID { get; set; }
         [StringLength(50)]
-        public string UserName { get; set; }
+        public string SenderMail { get; set; }
         [StringLength(50)]
-        public string UserMail { get; set; }
-        [StringLength(50)]
+        public string ReceverMail { get; set; }
+        [StringLength(100)]
         public string Subject { get; set; }
 
+        [AllowHtml]
+        public string MessageContent { get; set; }
+
         [DisplayFormat(DataFormatString = "{0:dd-MMM-yyyy}")]
-        public DateTime ContactDate { get; set; }
-        public string Message { get; set; } 
+        public DateTime MessageDate { get; set; }
+
     }
 }

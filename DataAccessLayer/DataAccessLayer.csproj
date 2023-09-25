@@ -67,7 +67,9 @@
     <Compile Include="EntityFramework\EfCategoryDal.cs" />
     <Compile Include="EntityFramework\EfContentDal.cs" />
     <Compile Include="EntityFramework\EfHeadingDal.cs" />
+    <Compile Include="EntityFramework\EfMessageDal.cs" />
     <Compile Include="EntityFramework\EfWriterDal.cs" />
+    <Compile Include="Abstract\IMessageDal.cs" />
     <Compile Include="Migrations\202309121407209_umut1.cs" />
     <Compile Include="Migrations\202309121407209_umut1.designer.cs">
       <DependentUpon>202309121407209_umut1.cs</DependentUpon>
@@ -99,6 +101,22 @@
     <Compile Include="Migrations\202309221410210_mig_contactMessageLength.cs" />
     <Compile Include="Migrations\202309221410210_mig_contactMessageLength.designer.cs">
       <DependentUpon>202309221410210_mig_contactMessageLength.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202309250817037_mig_addMessageClass.cs" />
+    <Compile Include="Migrations\202309250817037_mig_addMessageClass.designer.cs">
+      <DependentUpon>202309250817037_mig_addMessageClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202309251531518_mig_message_format.cs" />
+    <Compile Include="Migrations\202309251531518_mig_message_format.designer.cs">
+      <DependentUpon>202309251531518_mig_message_format.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202309251542248_mig_contactdate_add.cs" />
+    <Compile Include="Migrations\202309251542248_mig_contactdate_add.designer.cs">
+      <DependentUpon>202309251542248_mig_contactdate_add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202309251555428_mig_contactdate_format.cs" />
+    <Compile Include="Migrations\202309251555428_mig_contactdate_format.designer.cs">
+      <DependentUpon>202309251555428_mig_contactdate_format.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -137,6 +155,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202309221410210_mig_contactMessageLength.resx">
       <DependentUpon>202309221410210_mig_contactMessageLength.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309250817037_mig_addMessageClass.resx">
+      <DependentUpon>202309250817037_mig_addMessageClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309251531518_mig_message_format.resx">
+      <DependentUpon>202309251531518_mig_message_format.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309251542248_mig_contactdate_add.resx">
+      <DependentUpon>202309251542248_mig_contactdate_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309251555428_mig_contactdate_format.resx">
+      <DependentUpon>202309251555428_mig_contactdate_format.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -18,6 +18,10 @@ namespace MvcProjeKampi.Controllers
         public ActionResult Index()
         {
             var contactvalues = cm.GetList();
+
+            int contactCount = contactvalues.Count;
+            ViewBag.ContactCount = contactCount;
+
             return View(contactvalues);
         }
 
@@ -26,5 +30,11 @@ namespace MvcProjeKampi.Controllers
             var contactvalues = cm.GetByID(id);
             return View(contactvalues);
         }
+
+        public PartialViewResult MessageListMenu()
+        {
+            return PartialView();
+        }
+
     }
 }
