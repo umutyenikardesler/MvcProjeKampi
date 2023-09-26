@@ -16,7 +16,6 @@ namespace MvcProjeKampi.Controllers
     {
 
         CategoryManager cm = new CategoryManager(new EfCategoryDal());
-        HeadingManager hm = new HeadingManager(new EfHeadingDal());
 
         public ActionResult Index()
         {

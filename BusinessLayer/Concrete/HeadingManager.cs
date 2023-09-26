@@ -58,6 +58,10 @@ namespace BusinessLayer.Concrete
         {
             _headingDal.Update(heading);
         }
-               
+
+        public List<Heading> GetListByWriter()
+        {
+            return _headingDal.List(x => x.WriterID == 4);
+        }
     }
 }

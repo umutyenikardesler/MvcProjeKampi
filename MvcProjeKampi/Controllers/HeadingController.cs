@@ -31,12 +31,14 @@ namespace MvcProjeKampi.Controllers
                                                       Text=x.CategoryName,
                                                       Value=x.CategoryID.ToString()
                                                   }).ToList();
+
             List<SelectListItem> valuewriter = (from x in wm.GetList()
                                                 select new SelectListItem
                                                 {
                                                         Text = x.WriterName + " " + x.WriterSurName,
                                                         Value = x.WriterID.ToString()
                                                 }).ToList();
+
             ViewBag.vlc = valuecategory;
             ViewBag.vlw = valuewriter;
             return View();

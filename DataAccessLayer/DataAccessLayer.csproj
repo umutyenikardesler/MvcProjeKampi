@@ -56,6 +56,7 @@
     <Compile Include="Abstract\IContactDal.cs" />
     <Compile Include="Abstract\IContentDal.cs" />
     <Compile Include="Abstract\IHeadingDal.cs" />
+    <Compile Include="Abstract\IImageFileDal.cs" />
     <Compile Include="Abstract\IRepository.cs" />
     <Compile Include="Abstract\IWriterDal.cs" />
     <Compile Include="Concrete\Context.cs" />
@@ -67,6 +68,7 @@
     <Compile Include="EntityFramework\EfCategoryDal.cs" />
     <Compile Include="EntityFramework\EfContentDal.cs" />
     <Compile Include="EntityFramework\EfHeadingDal.cs" />
+    <Compile Include="EntityFramework\EfImageFileDal.cs" />
     <Compile Include="EntityFramework\EfMessageDal.cs" />
     <Compile Include="EntityFramework\EfWriterDal.cs" />
     <Compile Include="Abstract\IMessageDal.cs" />
@@ -118,6 +120,14 @@
     <Compile Include="Migrations\202309251555428_mig_contactdate_format.designer.cs">
       <DependentUpon>202309251555428_mig_contactdate_format.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202309260807190_mig_Image.cs" />
+    <Compile Include="Migrations\202309260807190_mig_Image.designer.cs">
+      <DependentUpon>202309260807190_mig_Image.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202309261103320_mig_Admin_Table.cs" />
+    <Compile Include="Migrations\202309261103320_mig_Admin_Table.designer.cs">
+      <DependentUpon>202309261103320_mig_Admin_Table.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -167,6 +177,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202309251555428_mig_contactdate_format.resx">
       <DependentUpon>202309251555428_mig_contactdate_format.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309260807190_mig_Image.resx">
+      <DependentUpon>202309260807190_mig_Image.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309261103320_mig_Admin_Table.resx">
+      <DependentUpon>202309261103320_mig_Admin_Table.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
