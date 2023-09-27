@@ -1,9 +1,8 @@
 ﻿@using EntityLayer.Concrete
 @model List<Message>
-
 @{
     ViewBag.Title = "Sendbox";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
 }
 
 <!DOCTYPE html>
@@ -25,7 +24,7 @@
     <!-- Main content -->
     <section class="content">
         <div class="row">
-            @Html.Action("PVMessageListMenu", "Contact")
+            @Html.Action("PVMessageListMenu", "WriterPanelMessage")
             <!-- /.col -->
             <div class="col-md-9">
                 <div class="card card-primary card-outline">
@@ -80,8 +79,8 @@
                                                     <label for="check1"></label>
                                                 </div>
                                             </td>
-                                            <td class="mailbox-star"><a href="/Message/GetSendboxMessageDetails/@item.MessageID"><i class="fas fa-star text-warning"></i></a></td>
-                                            <td class="mailbox-name"><a href="/Message/GetSendboxMessageDetails/@item.MessageID">@item.ReceverMail</a></td>
+                                            <td class="mailbox-star"><a href="/WriterPanelMessage/GetSendboxMessageDetails/@item.MessageID"><i class="fas fa-star text-warning"></i></a></td>
+                                            <td class="mailbox-name"><a href="/WriterPanelMessage/GetSendboxMessageDetails/@item.MessageID">@item.ReceverMail</a></td>
                                             <td class="mailbox-subject">
                                                 <b> @item.Subject </b> - @item.MessageContent.Substring(0, 20)
                                             </td>

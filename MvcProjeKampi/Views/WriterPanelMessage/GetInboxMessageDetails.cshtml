@@ -1,9 +1,9 @@
 ﻿@model EntityLayer.Concrete.Message
-
 @{
     ViewBag.Title = "GetInboxMessageDetails";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
 }
+
 
 <!DOCTYPE html>
 <html>
@@ -23,7 +23,7 @@
     <section class="content">
         <div class="container-fluid">
             <div class="row">
-                @Html.Action("PVMessageListMenu", "Contact")
+                @Html.Action("PVMessageListMenu", "WriterPanelMessage")
                 <!-- /.col -->
                 <div class="col-md-9">
                     <div class="card card-primary card-outline">
@@ -41,7 +41,7 @@
                                 <br />
                                 <h6>
                                     Mail : @Html.DisplayFor(x => x.SenderMail)
-                                    <span class="mailbox-read-time float-right"> @Html.DisplayFor(x=>x.MessageDate) </span>
+                                    <span class="mailbox-read-time float-right"> @Html.DisplayFor(x => x.MessageDate) </span>
                                 </h6>
                             </div>
                             <div class="mailbox-read-message">
