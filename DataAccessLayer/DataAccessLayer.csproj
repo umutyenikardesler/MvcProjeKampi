@@ -135,6 +135,10 @@
     <Compile Include="Migrations\202309281447431_somethingChanged.designer.cs">
       <DependentUpon>202309281447431_somethingChanged.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202309290545467_admin_fixed.cs" />
+    <Compile Include="Migrations\202309290545467_admin_fixed.designer.cs">
+      <DependentUpon>202309290545467_admin_fixed.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -193,6 +197,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202309281447431_somethingChanged.resx">
       <DependentUpon>202309281447431_somethingChanged.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309290545467_admin_fixed.resx">
+      <DependentUpon>202309290545467_admin_fixed.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
