@@ -31,7 +31,7 @@ namespace MvcProjeKampi.Controllers
             return View(contactvalues);
         }
 
-        public PartialViewResult MessageListMenu()
+        public PartialViewResult PVMessageListMenu()
         {
             return PartialView();
         }

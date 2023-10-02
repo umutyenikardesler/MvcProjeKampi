@@ -18,9 +18,9 @@ namespace BusinessLayer.Concrete
             _contentDal = contentDal;
         }
 
-        public void ContentAdd(Content category)
+        public void ContentAdd(Content content)
         {
-            throw new NotImplementedException();
+            _contentDal.Insert(content);
         }
 
         public void ContentDelete(Content content)

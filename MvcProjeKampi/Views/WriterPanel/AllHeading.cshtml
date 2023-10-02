@@ -1,11 +1,13 @@
 ﻿@using EntityLayer.Concrete
-@model List<Heading>
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<Heading>
 
 @{
-    ViewBag.Title = "MyHeading";
+    ViewBag.Title = "AllHeading";
     Layout = "~/Views/Shared/_WriterLayout.cshtml";
 }
-
+<link href="~/Content/PagedList.css" rel="stylesheet" />
 @{ string color = "";}
 
 <section class="content pt-2">
@@ -37,8 +39,8 @@
                             Oluşturan Yazar
                         </th>
                         @*<th style="width: 20%">
-                            Durum
-                        </th>*@
+                                Durum
+                            </th>*@
                         <th style="width: 25%" class="text-center">
                             Kategori
                         </th>
@@ -99,24 +101,24 @@
                                 </ul>
                             </td>
                             @*<td class="">
-                                <span style="color: @(item.HeadingStatus ? "green" : "red");">@((item.HeadingStatus ? "Aktif" : "Pasif"))</span>
-                            </td>*@
+                                    <span style="color: @(item.HeadingStatus ? "green" : "red");">@((item.HeadingStatus ? "Aktif" : "Pasif"))</span>
+                                </td>*@
                             <td class="project-state">
                                 <span class="@color">@item.Category.CategoryName</span>
                             </td>
                             <td class="project-actions text-right">
-                                <a class="btn btn-primary btn-sm" href="/Content/ContentByHeading/@item.HeadingID">
+                                <a class="btn btn-primary btn-sm" href="/Default/Headings/@item.HeadingID">
                                     <i class="fas fa-folder">
                                     </i>
                                     Yazılar
                                 </a>
-                                <a class="btn btn-info btn-sm" href="/WriterPanel/EditHeading/@item.HeadingID">
+                                <a class="btn btn-info btn-sm" href="/WriterPanelContent/AddContent/@item.HeadingID">
                                     <i class="fas fa-pencil-alt">
                                     </i>
-                                    Düzenle
+                                    Bu Başlığa Ekle
                                 </a>
 
-                                @if (item.HeadingStatus)
+                                @*@if (item.HeadingStatus)
                                 {
                                     <a class="btn btn-danger btn-sm" href="/WriterPanel/DeleteHeading/@item.HeadingID">
                                         <i class="fas fa-trash"> Pasif Yap</i>
@@ -127,7 +129,7 @@
                                     <a class="btn btn-success btn-sm" href="/WriterPanel/DeleteHeading/@item.HeadingID">
                                         <i class="fas fa-trash"> Aktif Yap</i>
                                     </a>
-                                }
+                                }*@
 
                             </td>
                         </tr>
@@ -138,6 +140,11 @@
         <!-- /.card-body -->
     </div>
     <!-- /.card -->
-    <a href="/WriterPanel/NewHeading/" class="btn btn-primary">Yeni Başlık Girişi</a>
 </section>
+
+@Html.PagedListPager((IPagedList)Model, p => Url.Action("AllHeading", new { p })@*, new PagedListRenderOptions
+{
+    LiElementClasses=new List<string>
+    { "page-link"}
+}*@)
 
