@@ -1,12 +1,13 @@
 ﻿@using EntityLayer.Concrete
 @model List<Heading>
-
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "HeadingListByWriters";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
 @{ string color = "";}
+
+<h2>Yazarın Başlıkları</h2>
 
 <section class="content pt-2">
     <!-- Default box -->
@@ -141,6 +142,5 @@
         <!-- /.card-body -->
     </div>
     <!-- /.card -->
-    <a href="/Heading/AddHeading/" class="btn btn-primary mb-3">Yeni Başlık Girişi</a>
 </section>
 <!-- /.content -->

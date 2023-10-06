@@ -141,6 +141,14 @@
     <Compile Include="Migrations\202309290545467_admin_fixed.designer.cs">
       <DependentUpon>202309290545467_admin_fixed.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202310061218024_contact_addIsRead.cs" />
+    <Compile Include="Migrations\202310061218024_contact_addIsRead.designer.cs">
+      <DependentUpon>202310061218024_contact_addIsRead.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202310061343039_message_addIsRead.cs" />
+    <Compile Include="Migrations\202310061343039_message_addIsRead.designer.cs">
+      <DependentUpon>202310061343039_message_addIsRead.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -202,6 +210,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202309290545467_admin_fixed.resx">
       <DependentUpon>202309290545467_admin_fixed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310061218024_contact_addIsRead.resx">
+      <DependentUpon>202310061218024_contact_addIsRead.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310061343039_message_addIsRead.resx">
+      <DependentUpon>202310061343039_message_addIsRead.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

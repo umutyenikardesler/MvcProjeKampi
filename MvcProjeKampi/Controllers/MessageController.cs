@@ -3,6 +3,7 @@ using BusinessLayer.ValidationRules;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using FluentValidation.Results;
+using MvcProjeKampi.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,8 +22,22 @@ namespace MvcProjeKampi.Controllers
         public ActionResult Inbox(string p) 
         {
             var messagelistIn = mm.GetListInbox(p);
+
+            //var messageCount = messagelistIn.Count;
+
+            //var viewModel = new MessageViewModel
+            //{
+            //    MessageList = messagelistIn,
+            //    MessageCount = messageCount
+            //};
+
             return View(messagelistIn);
         }
+
+        //public PartialViewResult PVMessageListMenu(MessageViewModel modelIn)
+        //{
+        //    return PartialView(modelIn);
+        //}
 
         public ActionResult Sendbox(string p)
         {
@@ -32,14 +47,22 @@ namespace MvcProjeKampi.Controllers
 
         public ActionResult GetInboxMessageDetails(int id)
         {
-            var values = mm.GetByID(id);
-            return View(values);
+            var messagevalues = mm.GetByID(id);
+
+            messagevalues.IsRead = true;
+            mm.MessageUpdate(messagevalues);
+
+            return View(messagevalues);
         }
 
         public ActionResult GetSendboxMessageDetails(int id)
         {
-            var values = mm.GetByID(id);    
-            return View(values);
+            var messagevalues = mm.GetByID(id);
+
+            messagevalues.IsRead = true;
+            mm.MessageUpdate(messagevalues);
+
+            return View(messagevalues);
         }
 
         [HttpGet]

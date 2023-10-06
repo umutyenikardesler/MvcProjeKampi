@@ -18,6 +18,8 @@ namespace EntityLayer.Concrete
         [StringLength(50)]
         public string Subject { get; set; }
 
+        public bool IsRead { get; set; } = false;
+
         [DisplayFormat(DataFormatString = "{0:dd-MMM-yyyy}")]
         public DateTime ContactDate { get; set; }
         public string Message { get; set; } 

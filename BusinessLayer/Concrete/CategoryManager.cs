@@ -14,6 +14,7 @@ namespace BusinessLayer.Concrete
     public class CategoryManager : ICategoryService
     {
         ICategoryDal _categoryDal;
+        IHeadingDal _headingDal;
 
         public CategoryManager(ICategoryDal categoryDal)
         {
@@ -43,6 +44,11 @@ namespace BusinessLayer.Concrete
         public List<Category> GetList()
         {
             return _categoryDal.List();
+        }
+
+        public List<Heading> GetByCategoryID(int id)
+        {
+            return _headingDal.List(x => x.CategoryID == id);
         }
 
         public Dictionary<bool, int> GetCategoryStatusCounts()

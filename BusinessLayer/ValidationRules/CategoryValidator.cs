@@ -12,7 +12,7 @@ namespace BusinessLayer.ValidationRules
     {
         public CategoryValidator()
         {
-            RuleFor(x => x.CategoryID).NotEmpty().WithMessage("Kategori ID Boş Geçilemez");
+            //RuleFor(x => x.CategoryID).NotEmpty().WithMessage("Kategori ID Boş Geçilemez");
             RuleFor(x => x.CategoryName).NotEmpty().WithMessage("Kategori Adı Boş Geçemezsiniz");
             RuleFor(x => x.CategoryDescription).NotEmpty().WithMessage("Açıklamayı Boş Geçemezsiniz.");
             RuleFor(x => x.CategoryName).MinimumLength(3).WithMessage("Lütfen en az 3 karakter girişi yapın.");

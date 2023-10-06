@@ -23,6 +23,11 @@ namespace BusinessLayer.Concrete
             return _headingDal.List(x=>x.CategoryID == id);
         }
 
+        public List<Heading> GetByWriterID(int id)
+        {
+            return _headingDal.List(x => x.WriterID == id);
+        }
+
         public HeadingManager(IHeadingDal headinDal)
         {
             _headingDal = headinDal;

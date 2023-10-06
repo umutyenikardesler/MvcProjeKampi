@@ -28,7 +28,6 @@ namespace MvcProjeKampi.Controllers
         {
             var adminuserinfo = lm.AdminLogin(p);
 
-
             if(adminuserinfo != null)
             {
                 FormsAuthentication.SetAuthCookie(adminuserinfo.AdminUserName, false);
@@ -40,6 +39,7 @@ namespace MvcProjeKampi.Controllers
             {
                 return RedirectToAction("Index");
             }
+
         }
 
         [HttpGet]

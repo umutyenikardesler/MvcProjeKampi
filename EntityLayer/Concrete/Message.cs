@@ -19,6 +19,8 @@ namespace EntityLayer.Concrete
         [StringLength(100)]
         public string Subject { get; set; }
 
+        public bool IsRead { get; set; } = false;
+
         [AllowHtml]
         public string MessageContent { get; set; }
 

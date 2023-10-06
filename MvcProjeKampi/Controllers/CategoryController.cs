@@ -16,6 +16,7 @@ namespace MvcProjeKampi.Controllers
     {
 
         CategoryManager cm = new CategoryManager(new EfCategoryDal());
+        HeadingManager hm = new HeadingManager(new EfHeadingDal());
 
         public ActionResult Index()
         {
@@ -56,6 +57,19 @@ namespace MvcProjeKampi.Controllers
             return View();
         }
 
+
+        public ActionResult CategoryListByHeadings(int id)
+        {
+            //var categories = cm.GetList(); // Tüm kategorileri al
+
+            //foreach (var category in categories)
+            //{
+                var headings = hm.GetByCategoryID(id); // Her kategorinin başlık Idsini al
+                return View(headings);
+            //}
+
+            //return View();
+        }
 
     }
 }
