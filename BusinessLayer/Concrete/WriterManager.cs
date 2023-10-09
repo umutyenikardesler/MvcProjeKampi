@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
+using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -48,9 +49,10 @@ namespace BusinessLayer.Concrete
         {
            _writerDal.Update(writer);
         }
+
         public Writer WriterLogin(Writer writer)
         {
-            return _writerDal.Get(x => x.WriterMail == writer.WriterMail && x.WriterPassword == writer.WriterPassword);
+           return _writerDal.Get(x => x.WriterMail == writer.WriterMail && x.WriterPassword == writer.WriterPassword);
         }
     }
 }

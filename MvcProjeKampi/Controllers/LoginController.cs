@@ -48,13 +48,14 @@ namespace MvcProjeKampi.Controllers
             return View();
         }
 
+
         [HttpPost]
-        public ActionResult WriterLogin(Writer p)
+        public ActionResult WriterLogin(Writer writer)
         {
             //Context c = new Context();
             //var writeruserinfo = c.Writers.FirstOrDefault(x => x.WriterMail == p.WriterMail && x.WriterPassword == p.WriterPassword);
 
-            var writeruserinfo = wm.WriterLogin(p);
+            Writer writeruserinfo = wm.WriterLogin(writer);
 
             if (writeruserinfo != null)
             {

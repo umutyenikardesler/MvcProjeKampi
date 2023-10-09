@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
+using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -27,16 +28,15 @@ namespace BusinessLayer.Concrete
         {
             throw new NotImplementedException();
         }
-
         public Admin AdminLogin(Admin admin)
         {
-            return _loginDal.Get(x=>x.AdminUserName == admin.AdminUserName &&  x.AdminPassword == admin.AdminPassword);
+            return _loginDal.Get(x => x.AdminUserName == admin.AdminUserName && x.AdminPassword == admin.AdminPassword);
         }
-
         public void AdminUpdate(Admin admin)
         {
             throw new NotImplementedException();
         }
+
         Admin ILoginService.GetByID(int id)
         {
             throw new NotImplementedException();

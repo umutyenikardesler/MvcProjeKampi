@@ -1,4 +1,7 @@
-﻿using MvcProjeKampi.Models;
+﻿using BusinessLayer.Concrete;
+using DataAccessLayer.EntityFramework;
+using EntityLayer.Concrete;
+using MvcProjeKampi.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +12,9 @@ namespace MvcProjeKampi.Controllers
 {
     public class ChartController : Controller
     {
-        
+        CategoryManager cm = new CategoryManager(new EfCategoryDal());
+        HeadingManager hm = new HeadingManager(new EfHeadingDal());
+
         public ActionResult Index()
         {
             return View();
@@ -17,35 +22,30 @@ namespace MvcProjeKampi.Controllers
 
         public ActionResult CategoryChart()
         {
-            return Json(BlogList(), JsonRequestBehavior.AllowGet);
+            var data = BlogList();
+            return Json(data, JsonRequestBehavior.AllowGet);
+            //return Json(BlogList(), JsonRequestBehavior.AllowGet);
         }
 
         public List<CategoryClass> BlogList()
         {
             List<CategoryClass> ct = new List<CategoryClass>();
 
-            ct.Add(new CategoryClass()
-            {
-                CategoryName = "Yazılım",
-                CategoryCount = 8
-            });
-            ct.Add(new CategoryClass()
-            {
-                CategoryName = "Seyahat",
-                CategoryCount = 4
-            });
-            ct.Add(new CategoryClass()
-            {
-                CategoryName = "Teknoloji",
-                CategoryCount = 7
-            });
-            ct.Add(new CategoryClass()
-            {
-                CategoryName = "Spor",
-                CategoryCount = 1
-            });
+            var categoryvalues = cm.GetList();
 
+            foreach (var item in categoryvalues)
+            {
+                int headingCount = hm.GetByCategoryID(item.CategoryID).Count;
+
+                ct.Add(new CategoryClass()
+                {
+                    CategoryName = item.CategoryName,
+                    CategoryCount = headingCount
+                });
+
+            }
             return ct;
+
         }
 
     }

@@ -15,6 +15,6 @@ namespace BusinessLayer.Abstract
 
         void AdminDelete(Admin admin);
         void AdminUpdate(Admin admin);
-        Admin AdminLogin(Admin admin);  
+        Admin AdminLogin(Admin admin);
     }
 }

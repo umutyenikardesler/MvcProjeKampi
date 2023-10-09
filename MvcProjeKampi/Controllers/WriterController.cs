@@ -17,6 +17,7 @@ namespace MvcProjeKampi.Controllers
         WriterValidator writervalidator = new WriterValidator();
         HeadingManager hm = new HeadingManager(new EfHeadingDal());
 
+        [Authorize(Roles = "B")]
         public ActionResult Index()  
         {
             var WriterValues = wm.GetList();
